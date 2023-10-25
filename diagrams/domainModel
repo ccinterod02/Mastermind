@@ -60,7 +60,7 @@ Attemp *-down-> ProposedCombination
 Player --> Board
 Player -.-> Attemp
 
-SecretCombination -up-|> Combination
+WinnerCombination -up-|> Combination
 ProposedCombination -up-|> Combination
 
 

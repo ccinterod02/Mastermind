@@ -2,9 +2,11 @@
 public class Mastermind {
 
     private Game game;
+    private Console console;
 
     public Mastermind() {
         this.game = new Game();
+        this.console = new Console();
     }
 
     public static void main(String[] args){
@@ -13,8 +15,8 @@ public class Mastermind {
 
     private void play() {
         do {
-            
-        } while ();
+            this.game.play();
+        } while (this.game.isResumed());
     }
 
 
