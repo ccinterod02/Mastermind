@@ -6,4 +6,7 @@ public class Console {
         return "hola";
     }
 
+    public void printString(String string) {
+    }
+
 }

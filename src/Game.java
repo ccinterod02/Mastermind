@@ -9,24 +9,22 @@ public class Game {
     private Player player;
 
     public Game() {
-        board = new Board();
-        player = new Player();
+        this.board = new Board();
+        this.player = new Player();
     }
 
     public void play() {
 
-        board.createWinnerCombination();
-        
         do {
-            board.addProposedCombination(this.player.proposeCombination());
-            board.displayBoard();    
-        } while (!board.hasWon() || !board.hasLost());
+            this.board.addProposedCombination(this.player.proposeCombination());
+            this.board.displayBoard();    
+        } while (!this.board.hasWon() || !this.board.hasLost());
         
-        if (board.hasWon()) {
-            console.printString("You've won!!! ;-)");
+        if (this.board.hasWon()) {
+            new Console().printString("You've won!!! ;-)");
         }
         else {
-            console.printString("You've lost!!! :-(");
+            new Console().printString("You've lost!!! :-(");
         }
     }
 
@@ -34,11 +32,8 @@ public class Game {
 
         String answer;
         do {
-            answer = console.readString("¿Desea continuar? (s/n): ");
+            answer = new Console().readString("¿Desea continuar? (s/n): ");
         } while (!answer.equals("s") || !answer.equals("n"));
         return answer.equals("s");
     }
-
-
-    
 }

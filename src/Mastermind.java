@@ -10,14 +10,14 @@ public class Mastermind {
     }
 
     public static void main(String[] args){
-        Mastermind mastermind = new Mastermind();
-        mastermind.play();
+        
+        new Mastermind().play();
     }
 
     private void play() {
         do {
-            game.play();
-        } while (game.isResumed());
+            this.game.play();
+        } while (this.game.isResumed());
     }
 
 
