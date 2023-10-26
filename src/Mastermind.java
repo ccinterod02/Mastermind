@@ -5,18 +5,19 @@ public class Mastermind {
     private Console console;
 
     public Mastermind() {
-        this.game = new Game();
-        this.console = new Console();
+        game = new Game();
+        console = new Console();
     }
 
     public static void main(String[] args){
-        new Mastermind().play();
+        Mastermind mastermind = new Mastermind();
+        mastermind.play();
     }
 
     private void play() {
         do {
-            this.game.play();
-        } while (this.game.isResumed());
+            game.play();
+        } while (game.isResumed());
     }
 
 

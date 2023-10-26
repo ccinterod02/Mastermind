@@ -22,4 +22,9 @@ public class Board {
 
     public void displayBoard() {
     }
+
+    public void addProposedCombination(Object proposeCombination) {
+    
+        
+    }
 }

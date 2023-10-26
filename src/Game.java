@@ -11,17 +11,23 @@ public class Game {
     public Game() {
         board = new Board();
         player = new Player();
-        // this.console = new Console();
     }
 
     public void play() {
 
-        this.board.createWinnerCombination();
+        board.createWinnerCombination();
         
         do {
-            this.player.proposeCombination();
-            this.board.displayBoard();    
-        } while (!this.board.hasWon() || !this.board.hasLost());
+            board.addProposedCombination(this.player.proposeCombination());
+            board.displayBoard();    
+        } while (!board.hasWon() || !board.hasLost());
+        
+        if (board.hasWon()) {
+            console.printString("You've won!!! ;-)");
+        }
+        else {
+            console.printString("You've lost!!! :-(");
+        }
     }
 
     public boolean isResumed() {
