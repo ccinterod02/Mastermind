@@ -1,5 +1,4 @@
 import java.util.LinkedList;
-import java.util.Random;
 
 public class Board {
     
@@ -13,11 +12,11 @@ public class Board {
     }
 
     public boolean hasWon() {
-        return this.attemps.peek().isWinner(winnerCombination);
+        return this.attemps.peek().isWinner();
     }
 
     public boolean hasLost() {
-        return this.attemps.size() >= 10 && !this.hasWon();
+        return (this.attemps.size() >= 10) && (!this.hasWon());
     }
 
     public void displayBoard() {
@@ -31,6 +30,6 @@ public class Board {
 
     public void addProposedCombination(ProposedCombination proposedCombination) {
         
-        this.attemps.add(new Attempt(proposedCombination));
+        this.attemps.add(new Attempt(proposedCombination, winnerCombination));
     }
 }
