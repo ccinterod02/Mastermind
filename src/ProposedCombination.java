@@ -1,8 +1,11 @@
 
-public class ProposedCombination {
+public class ProposedCombination extends Combination {
 
-    public void createProposedCombination(String readString) {
+
+    public ProposedCombination(String combination) {
+        super(combination);
     }
+
 
     public int compareWithoutPositions(WinnerCombination winnerCombination) {
         return 0;
