@@ -1,8 +1,4 @@
-import java.util.LinkedList;
 
-/**
- * Game
- */
 public class Game {
 
     private Board board;

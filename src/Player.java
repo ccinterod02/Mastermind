@@ -25,7 +25,7 @@ public class Player {
 
                 return true;
             }
-            
+
             set.add(character);
         }
 
@@ -51,7 +51,7 @@ public class Player {
                 }
             }
             if (this.hasDuplicateCharacters(buffer)) {
-                console.printString("The combination must not contains duplicated characters.")
+                console.printString("The combination must not contains duplicated characters.");
                 okString = false;
             }
         } while (!okString);
