@@ -34,7 +34,8 @@ public class ProposedCombination extends Combination {
 
 
     public int compareWithoutPositions(WinnerCombination winnerCombination) {
-        return 0;
+        Color[] coloursArray = winnerCombination.getColours();
+        return ;
     }
 
     public int compareWithPositions(WinnerCombination winnerCombination) {

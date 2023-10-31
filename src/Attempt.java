@@ -6,6 +6,7 @@ public class Attempt {
 
     private ProposedCombination proposedCombination;
     private WinnerCombination winnerCombination;
+    private Result result;
 
 
     public Attempt(ProposedCombination proposedCombination, WinnerCombination winnerCombination) {

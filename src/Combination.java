@@ -1,7 +1,15 @@
 
 public class Combination {
 
-    protected  Color[] colours;
+    protected Color[] colours;
+
+    public Color[] getColours() {
+        return colours;
+    }
+
+    public void setColours(Color[] colours) {
+        this.colours = colours;
+    }
 
     public String toString() {
         String combination = "";
@@ -11,5 +19,7 @@ public class Combination {
 
         return combination;
     }
+
+
 
 }
