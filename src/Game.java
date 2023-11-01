@@ -9,12 +9,24 @@ public class Game {
         this.player = new Player();
     }
 
+    private boolean isFinished() {
+        if (this.board.hasWon()) {
+            return true;
+        }
+        else if (this.board.hasLost()) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
     public void play() {
 
         do {
             this.board.addProposedCombination(this.player.proposeCombination());
             this.board.displayBoard();    
-        } while (!this.board.hasWon() || !this.board.hasLost());
+        } while (!this.isFinished());
         
         if (this.board.hasWon()) {
             new Console().printString("You've won!!! ;-)");
@@ -29,7 +41,7 @@ public class Game {
         String answer;
         do {
             answer = new Console().readString("¿Desea continuar? (s/n): ");
-        } while (!answer.equals("s") || !answer.equals("n"));
+        } while (!answer.equals("s") && !answer.equals("n"));
         return answer.equals("s");
     }
 }

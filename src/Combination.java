@@ -3,6 +3,10 @@ public class Combination {
 
     protected Color[] colours;
 
+    public Combination() {
+        this.colours = new Color[5];
+    }
+
     public Color[] getColours() {
         return colours;
     }

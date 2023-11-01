@@ -5,7 +5,6 @@ public class Board {
     private LinkedList<Attempt> attemps;
     private WinnerCombination winnerCombination;
     
-
     public Board(){
         this.attemps = new LinkedList<Attempt>();
         this.winnerCombination = new WinnerCombination(); 
@@ -16,7 +15,7 @@ public class Board {
     }
 
     public boolean hasLost() {
-        return (this.attemps.size() >= 10) && (!this.hasWon());
+        return (this.attemps.size() >= 10);
     }
 
     public void displayBoard() {
@@ -29,7 +28,6 @@ public class Board {
     }
 
     public void addProposedCombination(ProposedCombination proposedCombination) {
-        
         this.attemps.add(new Attempt(proposedCombination, winnerCombination));
     }
 }

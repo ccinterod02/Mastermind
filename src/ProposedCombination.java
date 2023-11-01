@@ -3,7 +3,7 @@ public class ProposedCombination extends Combination {
 
 
     public ProposedCombination(String combination) {
-        
+        super();
         for (int i = 0; i < combination.length(); i++) {
             switch (combination.charAt(i)) {
                 case 'r':
@@ -31,19 +31,38 @@ public class ProposedCombination extends Combination {
         }
     }
     
-
+    
 
     public int compareWithoutPositions(WinnerCombination winnerCombination) {
+        
+        int whiteToken = 0;
+        
         Color[] coloursArray = winnerCombination.getColours();
-        return ;
+        for (Color i : colours) {
+            for (Color j : coloursArray) {
+                if (i == j) {
+                    whiteToken += 1;
+                }
+            }
+        }
+
+        return whiteToken;
     }
 
     public int compareWithPositions(WinnerCombination winnerCombination) {
-        return 0;
+        
+        int blackToken = 0;
+        Color[] coloursArray = winnerCombination.getColours();
+        for (int i = 0; i < colours.length; i++) {
+            if (colours[i] == coloursArray[i]) {
+                blackToken += 1;
+            }
+        }    
+        return blackToken;
     }
 
     public boolean isSame(WinnerCombination winnerCombination) {
-        return false;
+        return this.compareWithPositions(winnerCombination) == 5;
     }
 
 }

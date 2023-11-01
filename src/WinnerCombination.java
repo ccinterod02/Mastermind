@@ -6,15 +6,15 @@ public class WinnerCombination extends Combination {
 
 
     public WinnerCombination() {
-        
+        super();
         Color[] totalColors = Color.values();
-        Random randomInt = new Random(Color.values().length);
+        Random randomInt = new Random(System.currentTimeMillis());
         Set<Color> colorsSet = new HashSet<>();
 
         while (colorsSet.size() < 5) {
             colorsSet.add(totalColors[randomInt.nextInt(totalColors.length)]);
         }
 
-        colorsSet.toArray(colours);
+        colorsSet.toArray(this.colours);
     }
 }

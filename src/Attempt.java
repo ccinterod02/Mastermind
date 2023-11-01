@@ -3,11 +3,8 @@ public class Attempt {
 
     private int matchesWithPosition;
     private int matchesWithoutPosition;
-
     private ProposedCombination proposedCombination;
     private WinnerCombination winnerCombination;
-    private Result result;
-
 
     public Attempt(ProposedCombination proposedCombination, WinnerCombination winnerCombination) {
         this.proposedCombination = proposedCombination;
@@ -26,5 +23,4 @@ public class Attempt {
         // todo: hacer el toString()
         console.printString(this.proposedCombination.toString() + " --> " + matchesWithoutPosition + " White, " + matchesWithPosition + " Black");
     }
-
 }

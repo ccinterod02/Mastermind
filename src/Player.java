@@ -32,31 +32,34 @@ public class Player {
         return false;
     }
 
-    public ProposedCombination proposeCombination() {
-
+    private boolean checkCombination(String buffer) {
         Console console = new Console();
-        boolean okString = false;
-        String buffer = "";
+        if (buffer.length() != 5) {
+            console.printString("La combinacion ha de tener 5 caracteres (r,b,y,p,o,g).");
+            return false;
+        }
+        
+        for (int i = 0; i < buffer.length(); i++) {
+            if (!this.checkLetters(buffer.charAt(i), "rbypog")) {
+                console.printString("La combinacion solo ha de estar formada por estos caracteres: (r,b,y,p,o,g).");
+                return false;
+            }
+        }
+
+        if (this.hasDuplicateCharacters(buffer)) {
+            console.printString("La combinación no puede contener caracteres duplicados.");
+            return false;
+        }
+        return true;
+    }
+
+    public ProposedCombination proposeCombination() {
+        Console console = new Console();
+        String buffer;
         do {
-            okString = true;
-            buffer = console.readString("Propose a combination: ");
-            if (buffer.length() != 5) {
-                console.printString("The combination must has 5 letters (r,b,y,p,o,g).");
-                okString = false;
-            }
-            for (int i = 0; i < buffer.length(); i++) {
-                if (!this.checkLetters(buffer.charAt(i), "rbypog")) {
-                    console.printString("The combination must contains only this letters (r,b,y,p,o,g).");
-                    okString = false;
-                }
-            }
-            if (this.hasDuplicateCharacters(buffer)) {
-                console.printString("The combination must not contains duplicated characters.");
-                okString = false;
-            }
-        } while (!okString);
+            buffer = console.readString("Propón una combinación: ");
+        } while (!this.checkCombination(buffer));
 
         return new ProposedCombination(buffer);
-        
     }
 }

@@ -2,13 +2,16 @@ import java.util.Scanner;
 
 public class Console {
 
+    private Scanner scanner;
+
+    public Console() {
+        scanner = new Scanner(System.in);
+    }
+
     public String readString(String mensaje) {
-        Scanner scanner = new Scanner(System.in);
+        this.printString(mensaje);
+        String input = this.scanner.nextLine();
 
-        System.out.print(mensaje);
-        String input = scanner.nextLine();
-
-        scanner.close();
         return input;
     }
 
