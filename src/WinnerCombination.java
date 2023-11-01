@@ -16,5 +16,6 @@ public class WinnerCombination extends Combination {
         }
 
         colorsSet.toArray(this.colours);
+        System.out.print(colours[0].getInitialLetter() + colours[1].getInitialLetter() + colours[2].getInitialLetter() + colours[3].getInitialLetter() + colours[4].getInitialLetter() + "\n");
     }
 }

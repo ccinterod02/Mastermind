@@ -11,7 +11,7 @@ public class Board {
     }
 
     public boolean hasWon() {
-        return this.attemps.peek().isWinner();
+        return this.attemps.peekLast().isWinner();
     }
 
     public boolean hasLost() {
