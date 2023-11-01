@@ -4,7 +4,7 @@ public class Combination {
     protected Color[] colours;
 
     public Combination() {
-        this.colours = new Color[5];
+        this.colours = new Color[4];
     }
 
     public Color[] getColours() {
@@ -17,7 +17,7 @@ public class Combination {
 
     public String toString() {
         String combination = "";
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < colours.length; i++) {
             combination += colours[i].getInitialLetter(); 
         }
 

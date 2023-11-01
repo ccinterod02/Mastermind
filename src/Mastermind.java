@@ -6,11 +6,11 @@ public class Mastermind {
     public Mastermind() {
     }
 
-    public void initGame() {
+    private void initGame() {
         game = new Game();
     }
 
-    public void removeGame() {
+    private void removeGame() {
         game = null;
     }
 

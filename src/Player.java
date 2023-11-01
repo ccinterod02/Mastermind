@@ -34,20 +34,20 @@ public class Player {
 
     private boolean checkCombination(String buffer) {
         Console console = new Console();
-        if (buffer.length() != 5) {
-            console.printString("La combinacion ha de tener 5 caracteres (r,b,y,p,o,g).");
+        if (buffer.length() != 4) {
+            console.printString("Wrong proposed combination.");
             return false;
         }
         
         for (int i = 0; i < buffer.length(); i++) {
             if (!this.checkLetters(buffer.charAt(i), "rbypog")) {
-                console.printString("La combinacion solo ha de estar formada por estos caracteres: (r,b,y,p,o,g).");
+                console.printString("Wrong colours, they must be: rbypog.");
                 return false;
             }
         }
 
         if (this.hasDuplicateCharacters(buffer)) {
-            console.printString("La combinación no puede contener caracteres duplicados.");
+            console.printString("The combination must not have duplicated colours.");
             return false;
         }
         return true;
@@ -57,7 +57,7 @@ public class Player {
         Console console = new Console();
         String buffer;
         do {
-            buffer = console.readString("Propón una combinación: ");
+            buffer = console.readString("Propose a combination: ");
         } while (!this.checkCombination(buffer));
 
         return new ProposedCombination(buffer);

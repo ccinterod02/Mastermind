@@ -20,6 +20,7 @@ public class Board {
 
     public void displayBoard() {
         Console console = new Console();
+        console.printString("");
         console.printString(this.attemps.size() + " Attempt(s):");
         console.printString("xxxx");
         for (Attempt attempt_i : this.attemps) {

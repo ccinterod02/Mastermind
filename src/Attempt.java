@@ -20,7 +20,6 @@ public class Attempt {
 
     public void display() {
         Console console = new Console();
-        // todo: hacer el toString()
-        console.printString(this.proposedCombination.toString() + " --> " + matchesWithoutPosition + " White, " + matchesWithPosition + " Black");
+        console.printString(this.proposedCombination.toString() + " --> " + matchesWithPosition + " blacks and " + matchesWithoutPosition + " whites");
     }
 }

@@ -40,8 +40,8 @@ public class Game {
 
         String answer;
         do {
-            answer = new Console().readString("¿Desea continuar? (s/n): ");
-        } while (!answer.equals("s") && !answer.equals("n"));
-        return answer.equals("s");
+            answer = new Console().readString("RESUME? (y/n): ");
+        } while (!answer.equals("y") && !answer.equals("Y") && !answer.equals("n") && !answer.equals("N"));
+        return answer.equals("y") || answer.equals("Y");
     }
 }

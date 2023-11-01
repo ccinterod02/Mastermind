@@ -46,7 +46,7 @@ public class ProposedCombination extends Combination {
             }
         }
 
-        return whiteToken;
+        return whiteToken - compareWithPositions(winnerCombination);
     }
 
     public int compareWithPositions(WinnerCombination winnerCombination) {
@@ -62,7 +62,7 @@ public class ProposedCombination extends Combination {
     }
 
     public boolean isSame(WinnerCombination winnerCombination) {
-        return this.compareWithPositions(winnerCombination) == 5;
+        return this.compareWithPositions(winnerCombination) == colours.length;
     }
 
 }
