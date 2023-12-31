@@ -1,0 +1,116 @@
+@startuml Mastermind
+
+class Mastermind {
+  - game: Game
+
+  + play(): void
+  + main(String[]): void
+  - initGame(): void
+  - removeGame(): void
+}
+
+class Game {
+  - board: Board
+  - player: Player
+
+  + play(): void
+  + isResumed(): boolean
+  - isFinished(): boolean
+
+}
+
+class Board {
+  - attemps: LinkedList<Attemp>
+  - winnerCombination: WinnerCombination
+
+  + hasWon(): boolean
+  + hasLost(): boolean
+  + displayBoard(): void
+  + addProposedCombination(ProposedCombination): void
+
+}
+
+enum Success{
+  + WHITE
+  + BLACK
+}
+
+enum Color {
+  + RED
+  + GREEN
+  + BLUE
+  + YELLOW
+  + PINK
+  + ORANGE
+
+  + getInitialLetter(): String
+}
+
+class Attemp {
+  - matchesWithPosition: int  
+  - matchesWithoutPosition: int
+  - proposedCombination: Proposedcombination
+  - winnerCombination: WinnerCombination
+
+  + isWinner(): boolean
+  + display(): boolean
+}
+
+
+class Player {
+
+  - checkLetters(char, String): boolean
+  - hasDuplicateCharacters(String): boolean
+  - checkCombination(String): boolean
+  + proposeCombination(): ProposedCombination
+
+}
+
+class Combination {
+  # colours: Color[]
+
+  + getColours(): Color[]
+  + setColours(Color[]): void
+  + toString(): String
+
+}
+
+class WinnerCombination {
+
+}
+
+class ProposedCombination {
+
+  + compareWithoutPositions(WinnerCombination): int
+  + compareWithPositions(WinnerCombination): int
+  + isSame(WinnerCombination): boolean
+
+}
+
+
+class Console {
+  - scanner: Scanner
+
+  + readString(String): String
+  + printString(String): void
+
+}
+
+
+Game *-down-> Board
+Game *-down-> Player
+Mastermind *-down-> Game
+Board *--> WinnerCombination
+Board o-down-> "0..10" Attemp
+Attemp *-down-> Result
+Result o-left-> "0..1" Success
+Attemp *-down-> ProposedCombination
+Player --> Board
+Player -.-> Attemp
+
+WinnerCombination -up-|> Combination
+ProposedCombination -up-|> Combination
+
+
+
+@enduml

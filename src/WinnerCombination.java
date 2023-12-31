@@ -4,7 +4,6 @@ import java.util.Set;
 
 public class WinnerCombination extends Combination {
 
-
     public WinnerCombination() {
         super();
         Color[] totalColors = Color.values();

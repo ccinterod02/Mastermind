@@ -1,7 +1,6 @@
 
 public class ProposedCombination extends Combination {
 
-
     public ProposedCombination(String combination) {
         super();
         for (int i = 0; i < combination.length(); i++) {
@@ -31,8 +30,6 @@ public class ProposedCombination extends Combination {
         }
     }
     
-    
-
     public int compareWithoutPositions(WinnerCombination winnerCombination) {
         
         int whiteToken = 0;

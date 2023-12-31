@@ -27,7 +27,4 @@ public class Mastermind {
             game.play();
         } while (this.game.isResumed());
     }
-
-
-
 }
