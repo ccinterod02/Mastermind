@@ -22,16 +22,18 @@ public class Game {
 
     public void play() {
 
+        Console console = new Console();
+
         do {
             this.board.addProposedCombination(this.player.proposeCombination());
             this.board.displayBoard();    
         } while (!this.isFinished());
         
         if (this.board.hasWon()) {
-            new Console().printString("You've won!!! ;-)");
+            console.printString("You've won!!! ;-)");
         }
         else {
-            new Console().printString("You've lost!!! :-(");
+            console.printString("You've lost!!! :-(");
         }
     }
 

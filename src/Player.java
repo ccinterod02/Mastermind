@@ -54,10 +54,9 @@ public class Player {
     }
 
     public ProposedCombination proposeCombination() {
-        Console console = new Console();
         String buffer;
         do {
-            buffer = console.readString("Propose a combination: ");
+            buffer = new Console().readString("Propose a combination: ");
         } while (!this.checkCombination(buffer));
 
         return new ProposedCombination(buffer);

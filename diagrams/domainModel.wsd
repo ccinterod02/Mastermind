@@ -96,20 +96,43 @@ class Console {
 
 }
 
+Mastermind *-down- Game
 
-Game *-down-> Board
-Game *-down-> Player
-Mastermind *-down-> Game
-Board *--> WinnerCombination
-Board o-down-> "0..10" Attemp
-Attemp *-down-> Result
-Result o-left-> "0..1" Success
-Attemp *-down-> ProposedCombination
-Player --> Board
-Player -.-> Attemp
+Game *-down- Board
+Game *-down- Player
+Game -.-> Console
+
+Player -.-> ProposedCombination
+Player -.-> Console
+
+Board o-down- "0..10" Attemp
+Board -.-> ProposedCombination
+Board *-down- WinnerCombination
+Board -.-> Console
+
+Combination *-down- "4" Color
 
 WinnerCombination -up-|> Combination
+
+ProposedCombination -.-> WinnerCombination
+ProposedCombination -.-> Color
 ProposedCombination -up-|> Combination
+
+
+
+' Game *-down-> Board
+' Game *-down-> Player
+' Mastermind *-down-> Game
+' Board *--> WinnerCombination
+' Board o-down-> "0..10" Attemp
+' Attemp *-down-> Result
+' Result o-left-> "0..1" Success
+' Attemp *-down-> ProposedCombination
+' Player --> Board
+' Player -.-> Attemp
+
+' WinnerCombination -up-|> Combination
+' ProposedCombination -up-|> Combination
 
 
 
