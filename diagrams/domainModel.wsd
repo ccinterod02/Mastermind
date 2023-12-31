@@ -30,11 +30,6 @@ class Board {
 
 }
 
-enum Success{
-  + WHITE
-  + BLACK
-}
-
 enum Color {
   + RED
   + GREEN
@@ -118,8 +113,6 @@ ProposedCombination -.-> WinnerCombination
 ProposedCombination -.-> Color
 ProposedCombination -up-|> Combination
 
-
-
 ' Game *-down-> Board
 ' Game *-down-> Player
 ' Mastermind *-down-> Game
@@ -133,7 +126,5 @@ ProposedCombination -up-|> Combination
 
 ' WinnerCombination -up-|> Combination
 ' ProposedCombination -up-|> Combination
-
-
 
 @enduml
