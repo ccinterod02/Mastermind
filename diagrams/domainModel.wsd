@@ -42,23 +42,20 @@ enum Color {
 }
 
 class Attemp {
-  - matchesWithPosition: int  
-  - matchesWithoutPosition: int
-  - proposedCombination: Proposedcombination
+  - matchWithPosition: int  
+  - matchWithoutPosition: int
+  - proposedCombination: ProposedCombination
   - winnerCombination: WinnerCombination
 
   + isWinner(): boolean
-  + display(): boolean
+  + display(): void
 }
 
-
 class Player {
-
-  - checkLetters(char, String): boolean
-  - hasDuplicateCharacters(String): boolean
-  - checkCombination(String): boolean
+  + checkLetters(char, String): boolean
+  + hasDuplicateCharacters(String): boolean
+  + checkCombination(String): boolean
   + proposeCombination(): ProposedCombination
-
 }
 
 class Combination {
@@ -84,11 +81,10 @@ class ProposedCombination {
 
 
 class Console {
-  - scanner: Scanner
+  - scanner: java.util.Scanner
 
-  + readString(String): String
-  + printString(String): void
-
+  + readString(prompt: String): String
+  + printString(message: String): void
 }
 
 Mastermind *-down- Game
