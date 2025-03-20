@@ -1,3 +1,5 @@
+package mastermind;
+
 public enum Color {
     RED("r"),
     GREEN("g"),

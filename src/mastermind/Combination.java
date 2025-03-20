@@ -1,3 +1,4 @@
+package mastermind;
 
 public class Combination {
 
@@ -18,12 +19,10 @@ public class Combination {
     public String toString() {
         String combination = "";
         for (int i = 0; i < colours.length; i++) {
-            combination += colours[i].getInitialLetter(); 
+            combination += colours[i].getInitialLetter();
         }
 
         return combination;
     }
-
-
 
 }

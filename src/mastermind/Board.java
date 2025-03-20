@@ -1,13 +1,17 @@
+package mastermind;
+
 import java.util.LinkedList;
 
+import utils.Console;
+
 public class Board {
-    
+
     private LinkedList<Attempt> attemps;
     private WinnerCombination winnerCombination;
-    
-    public Board(){
+
+    public Board() {
         this.attemps = new LinkedList<Attempt>();
-        this.winnerCombination = new WinnerCombination(); 
+        this.winnerCombination = new WinnerCombination();
     }
 
     public boolean hasWon() {
@@ -19,13 +23,13 @@ public class Board {
     }
 
     public void displayBoard() {
-        Console console = new Console();
-        console.printString("");
-        console.printString(this.attemps.size() + " Attempt(s):");
-        console.printString("xxxx");
+        Console console = Console.getInstance();
+        console.writeln("");
+        console.writeln(this.attemps.size() + " Attempt(s):");
+        console.writeln("xxxx");
         for (Attempt attempt_i : this.attemps) {
             attempt_i.display();
-        }        
+        }
     }
 
     public void addProposedCombination(ProposedCombination proposedCombination) {

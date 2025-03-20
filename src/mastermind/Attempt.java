@@ -1,3 +1,6 @@
+package mastermind;
+
+import utils.Console;
 
 public class Attempt {
 
@@ -14,12 +17,13 @@ public class Attempt {
     }
 
     public boolean isWinner() {
-        
+
         return this.proposedCombination.isSame(winnerCombination);
     }
 
     public void display() {
-        Console console = new Console();
-        console.printString(this.proposedCombination.toString() + " --> " + matchesWithPosition + " blacks and " + matchesWithoutPosition + " whites");
+        Console console = Console.getInstance();
+        console.writeln(this.proposedCombination.toString() + " --> " + matchesWithPosition + " blacks and "
+                + matchesWithoutPosition + " whites");
     }
 }

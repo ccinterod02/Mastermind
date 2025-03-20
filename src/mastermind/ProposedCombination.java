@@ -1,3 +1,4 @@
+package mastermind;
 
 public class ProposedCombination extends Combination {
 
@@ -23,17 +24,17 @@ public class ProposedCombination extends Combination {
                 case 'p':
                     colours[i] = Color.PINK;
                     break;
-            
+
                 default:
                     break;
             }
         }
     }
-    
+
     public int compareWithoutPositions(WinnerCombination winnerCombination) {
-        
+
         int whiteToken = 0;
-        
+
         Color[] coloursArray = winnerCombination.getColours();
         for (Color i : colours) {
             for (Color j : coloursArray) {
@@ -47,14 +48,14 @@ public class ProposedCombination extends Combination {
     }
 
     public int compareWithPositions(WinnerCombination winnerCombination) {
-        
+
         int blackToken = 0;
         Color[] coloursArray = winnerCombination.getColours();
         for (int i = 0; i < colours.length; i++) {
             if (colours[i] == coloursArray[i]) {
                 blackToken += 1;
             }
-        }    
+        }
         return blackToken;
     }
 

@@ -1,3 +1,4 @@
+package mastermind;
 
 public class Mastermind {
 
@@ -14,13 +15,13 @@ public class Mastermind {
         game = null;
     }
 
-    public static void main(String[] args){
-        
+    public static void main(String[] args) {
+
         new Mastermind().play();
     }
 
     private void play() {
-        
+
         do {
             this.removeGame();
             this.initGame();

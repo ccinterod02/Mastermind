@@ -1,3 +1,7 @@
+package mastermind;
+
+import utils.Console;
+
 public class Game {
 
     private Board board;
@@ -11,29 +15,26 @@ public class Game {
     private boolean isFinished() {
         if (this.board.hasWon()) {
             return true;
-        }
-        else if (this.board.hasLost()) {
+        } else if (this.board.hasLost()) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
 
     public void play() {
 
-        Console console = new Console();
+        Console console = Console.getInstance();
 
         do {
             this.board.addProposedCombination(this.player.proposeCombination());
-            this.board.displayBoard();    
+            this.board.displayBoard();
         } while (!this.isFinished());
-        
+
         if (this.board.hasWon()) {
-            console.printString("You've won!!! ;-)");
-        }
-        else {
-            console.printString("You've lost!!! :-(");
+            console.writeln("You've won!!! ;-)");
+        } else {
+            console.writeln("You've lost!!! :-(");
         }
     }
 
@@ -41,7 +42,7 @@ public class Game {
 
         String answer;
         do {
-            answer = new Console().readString("RESUME? (y/n): ");
+            answer = Console.getInstance().readString("RESUME? (y/n): ");
         } while (!answer.equals("y") && !answer.equals("Y") && !answer.equals("n") && !answer.equals("N"));
         return answer.equals("y") || answer.equals("Y");
     }
