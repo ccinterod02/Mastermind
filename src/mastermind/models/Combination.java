@@ -1,4 +1,6 @@
-package mastermind;
+package mastermind.models;
+
+import mastermind.types.Color;
 
 public class Combination {
 

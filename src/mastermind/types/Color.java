@@ -1,4 +1,4 @@
-package mastermind;
+package mastermind.types;
 
 public enum Color {
     RED("r"),

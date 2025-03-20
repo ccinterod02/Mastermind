@@ -1,8 +1,10 @@
-package mastermind;
+package mastermind.models;
 
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
+
+import mastermind.types.Color;
 
 public class WinnerCombination extends Combination {
 
