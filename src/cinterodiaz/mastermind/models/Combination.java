@@ -1,6 +1,6 @@
-package mastermind.models;
+package cinterodiaz.mastermind.models;
 
-import mastermind.types.Color;
+import cinterodiaz.mastermind.types.Color;
 
 public class Combination {
 

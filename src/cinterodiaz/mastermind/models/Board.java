@@ -1,8 +1,8 @@
-package mastermind.models;
+package cinterodiaz.mastermind.models;
 
 import java.util.LinkedList;
 
-import utils.Console;
+import cinterodiaz.utils.Console;
 
 public class Board {
 
@@ -22,17 +22,17 @@ public class Board {
         return (this.attemps.size() >= 10);
     }
 
-    public void displayBoard() {
-        Console console = Console.getInstance();
-        console.writeln("");
-        console.writeln(this.attemps.size() + " Attempt(s):");
-        console.writeln("xxxx");
-        for (Attempt attempt_i : this.attemps) {
-            attempt_i.display();
-        }
-    }
-
     public void addProposedCombination(ProposedCombination proposedCombination) {
         this.attemps.add(new Attempt(proposedCombination, winnerCombination));
     }
+
+    public boolean isFinished() {
+        return this.hasLost() || this.hasWon();
+    }
+
+    public void reset() {
+        this.attemps.clear();
+        this.winnerCombination = new WinnerCombination();
+    }
+
 }

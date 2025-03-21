@@ -1,6 +1,6 @@
-package mastermind.models;
+package cinterodiaz.mastermind.models;
 
-import utils.Console;
+import cinterodiaz.utils.Console;
 
 public class Attempt {
 
@@ -17,13 +17,6 @@ public class Attempt {
     }
 
     public boolean isWinner() {
-
         return this.proposedCombination.isSame(winnerCombination);
-    }
-
-    public void display() {
-        Console console = Console.getInstance();
-        console.writeln(this.proposedCombination.toString() + " --> " + matchesWithPosition + " blacks and "
-                + matchesWithoutPosition + " whites");
     }
 }

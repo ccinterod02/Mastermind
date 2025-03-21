@@ -1,9 +1,9 @@
-package mastermind.models;
+package cinterodiaz.mastermind.models;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import utils.Console;
+import cinterodiaz.utils.Console;
 
 public class Player {
 

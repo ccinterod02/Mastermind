@@ -1,0 +1,8 @@
+@startuml cinterodiaz.mastermind.views
+
+abstract class cinterodiaz.mastermind.views.WithGameView {
+    + WithGameView(Game)
+}
+cinterodiaz.mastermind.views.WithGameView *-down-> Game
+
+@enduml

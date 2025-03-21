@@ -1,4 +1,4 @@
-package mastermind.types;
+package cinterodiaz.mastermind.types;
 
 public enum Color {
     RED("r"),

@@ -1,4 +1,4 @@
-package utils;
+package cinterodiaz.utils;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

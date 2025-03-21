@@ -2,6 +2,7 @@
 
 class Mastermind {
   - game: Game
+  - view: View
 
   + play(): void
   + main(String[]): void
