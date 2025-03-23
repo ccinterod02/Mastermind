@@ -35,4 +35,8 @@ public class Board {
         this.winnerCombination = new WinnerCombination();
     }
 
+    public LinkedList<Attempt> getAttempts() {
+        return this.attemps;
+    }
+
 }

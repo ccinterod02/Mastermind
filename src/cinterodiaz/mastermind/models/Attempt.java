@@ -19,4 +19,16 @@ public class Attempt {
     public boolean isWinner() {
         return this.proposedCombination.isSame(winnerCombination);
     }
+
+    public int getBlacks() {
+        return matchesWithPosition;
+    }
+
+    public int getWhites() {
+        return matchesWithoutPosition;
+    }
+
+    public String getProposedCombinationString() {
+        return this.proposedCombination.toString();
+    }
 }

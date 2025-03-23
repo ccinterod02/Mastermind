@@ -14,9 +14,9 @@ public class ProposedCombinationView {
         Error error;
         String chars;
         do {
-            chars = Console.getInstance().readString(Message.PROPOSED_COMBINATION.toString().toLowerCase());
+            chars = Console.getInstance().readString(Message.PROPOSED_COMBINATION.toString()).toLowerCase();
             error = this.checkCombination(chars);
-        } while (error.isNoError());
+        } while (!error.isNoError());
         return new ProposedCombination(chars);
     }
 
@@ -47,6 +47,7 @@ public class ProposedCombinationView {
     private Error checkCombination(String chars) {
         Console console = Console.getInstance();
         if (chars.length() != 4) {
+            console.writeln("Wrong size, it must be 4 chars.");
             return Error.WRONG_SIZE;
         }
         for (int i = 0; i < chars.length(); i++) {
