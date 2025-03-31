@@ -3,24 +3,22 @@ package cinterodiaz.mastermind;
 import cinterodiaz.mastermind.models.Board;
 import cinterodiaz.mastermind.views.View;
 
-public class Mastermind {
+abstract class Mastermind {
 
     private Board board;
     private View view;
 
-    public Mastermind() {
+    protected Mastermind() {
         this.board = new Board();
-        this.view = new View(board);
+        this.createView(this.board);
     }
 
-    private void play() {
+    abstract View createView(Board board);
+
+    protected void play() {
         do {
             this.view.start();
             this.view.play();
         } while (this.view.resume());
-    }
-
-    public static void main(String[] args) {
-        new Mastermind().play();
     }
 }

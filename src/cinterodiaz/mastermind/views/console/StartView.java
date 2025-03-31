@@ -1,6 +1,8 @@
-package cinterodiaz.mastermind.views;
+package cinterodiaz.mastermind.views.console;
 
 import cinterodiaz.mastermind.models.Board;
+import cinterodiaz.mastermind.views.Message;
+import cinterodiaz.mastermind.views.WithBoardView;
 
 public class StartView extends WithBoardView {
 
@@ -9,7 +11,7 @@ public class StartView extends WithBoardView {
     }
 
     public void interact() {
-        Message.TITLE.writeln();
+        new MessageView().writeln(Message.TITLE);
     }
 
 }

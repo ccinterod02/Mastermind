@@ -2,8 +2,6 @@ package cinterodiaz.mastermind.models;
 
 import java.util.LinkedList;
 
-import cinterodiaz.utils.Console;
-
 public class Board {
 
     private LinkedList<Attempt> attemps;

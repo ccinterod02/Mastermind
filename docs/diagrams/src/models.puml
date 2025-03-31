@@ -1,0 +1,64 @@
+@startuml mastermind.models
+
+package mastermind.models {
+    class Board {
+        - attemps : LinkedList<Attempt>
+        - winnerCombination : WinnerCombination
+        --
+        + Board()
+        + hasWon() : boolean
+        + hasLost() : boolean
+        + addProposedCombination(proposedCombination : ProposedCombination) : void
+        + isFinished() : boolean
+        + reset() : void
+        + getAttempts() : LinkedList<Attempt>
+    }
+    Board o-> Attempt
+    Board *-> WinnerCombination
+
+    class Attempt {
+        - matchesWithPosition : int
+        - matchesWithoutPosition : int
+        - proposedCombination : ProposedCombination
+        - winnerCombination : WinnerCombination
+        --
+        + Attempt(proposedCombination : ProposedCombination, winnerCombination : WinnerCombination)
+        + isWinner() : boolean
+        + getBlacks() : int
+        + getWhites() : int
+        + getProposedCombinationString() : String
+    }
+    Attempt *-> ProposedCombination
+    Attempt *-> WinnerCombination
+
+    abstract class Combination {
+        # colours : Color[]
+        --
+        + Combination()
+        + getColours() : Color[]
+        + setColours(colours : Color[]) : void
+        + toString() : String
+    }
+
+    Combination *-> mastermind.types.Color
+
+    class ProposedCombination  {
+        + ProposedCombination(combination : String)
+        + compareWithPositions(winnerCombination : WinnerCombination) : int
+        + compareWithoutPositions(winnerCombination : WinnerCombination) : int
+        + isSame(winnerCombination : WinnerCombination) : boolean
+    }
+    ProposedCombination -up-|> Combination
+    ProposedCombination -.-> WinnerCombination
+    ProposedCombination -.-> Color
+
+    class WinnerCombination {
+        + WinnerCombination()
+    }
+    WinnerCombination -up-|> Combination
+
+
+}
+
+
+@enduml

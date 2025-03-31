@@ -1,7 +1,9 @@
-package cinterodiaz.mastermind.views;
+package cinterodiaz.mastermind.views.console;
 
 import cinterodiaz.mastermind.models.Attempt;
 import cinterodiaz.mastermind.models.Board;
+import cinterodiaz.mastermind.views.Message;
+import cinterodiaz.mastermind.views.WithBoardView;
 import cinterodiaz.utils.Console;
 
 public class AttemptsView extends WithBoardView {
@@ -18,7 +20,7 @@ public class AttemptsView extends WithBoardView {
         Console console = Console.getInstance();
         for (Attempt attempt : this.board.getAttempts()) {
             console.write(attempt.getProposedCombinationString());
-            Message.RESULT.writeln(attempt.getBlacks(), attempt.getWhites());
+            new MessageView().writeln(Message.RESULT, attempt.getBlacks(), attempt.getWhites());
         }
     }
 

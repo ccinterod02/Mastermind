@@ -2,7 +2,7 @@ package cinterodiaz.mastermind.models;
 
 import cinterodiaz.mastermind.types.Color;
 
-public class Combination {
+abstract class Combination {
 
     protected Color[] colours;
 

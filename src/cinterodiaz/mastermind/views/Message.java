@@ -2,7 +2,7 @@ package cinterodiaz.mastermind.views;
 
 import cinterodiaz.utils.Console;
 
-enum Message {
+public enum Message {
 
     TITLE("----- MASTERMIND -----"),
     SECRET_COMBINATION("****"),

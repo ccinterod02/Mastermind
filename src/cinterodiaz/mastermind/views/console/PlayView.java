@@ -1,6 +1,8 @@
-package cinterodiaz.mastermind.views;
+package cinterodiaz.mastermind.views.console;
 
 import cinterodiaz.mastermind.models.Board;
+import cinterodiaz.mastermind.views.Message;
+import cinterodiaz.mastermind.views.WithBoardView;
 
 public class PlayView extends WithBoardView {
 
@@ -17,9 +19,9 @@ public class PlayView extends WithBoardView {
             this.boardView.write();
         } while (!this.board.isFinished());
         if (this.board.hasWon()) {
-            Message.WINNER.writeln();
+            new MessageView().writeln(Message.WINNER);
         } else {
-            Message.LOOSER.writeln();
+            new MessageView().writeln(Message.LOOSER);
         }
     }
 

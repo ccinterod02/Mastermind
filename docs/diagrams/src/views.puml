@@ -1,0 +1,131 @@
+@startuml views
+
+package cinterodiaz.mastermind.views.console {
+
+    class ConsoleView {
+        - startView : StartView
+        - playView : PlayView
+        - resumeView : ResumeView
+        --
+        + ConsoleView(board : Board)
+        + start() : void
+        + play() : void
+        + resume() : boolean
+    }
+
+    ConsoleView -up-|> cinterodiaz.mastermind.views.View
+    ConsoleView *-down-> StartView
+    ConsoleView *-down-> PlayView
+    ConsoleView *-down-> ResumeView 
+
+    class StartView {
+        + StartView(board : Board)
+        + interact() : void
+    }
+
+    StartView -up-|> cinterodiaz.mastermind.views.WithBoardView
+    StartView -.-> MessageView
+    StartView -.-> cinterodiaz.mastermind.views.Message
+
+    class PlayView {
+        - boardView : BoardView
+        --
+        + PlayView(board : Board)
+        + interact() : void
+    }
+
+    PlayView -up-|> cinterodiaz.mastermind.views.WithBoardView
+    PlayView *-down-> BoardView
+    PlayView -.-> ProposedCombinationView
+    PlayView -.-> MessageView
+
+    class ResumeView {
+        + ResumeView(board : Board)
+        + interact() : boolean
+    }
+
+    ResumeView -up-|> cinterodiaz.mastermind.views.WithBoardView
+    ResumeView -.-> cinterodiaz.utils.YesNoDialog
+
+    class BoardView {
+        + BoardView(board : Board)
+        + write() : void
+    }
+
+    BoardView -up-|> cinterodiaz.mastermind.views.WithBoardView
+    BoardView -.-> AttemptsView
+    BoardView -.-> cinterodiaz.mastermind.views.Message
+
+    class AttemptsView {
+        + AttemptsView(board : Board)
+        + getSize() : int
+        + write() : void
+    }
+
+    AttemptsView -up-|> cinterodiaz.mastermind.views.WithBoardView
+    AttemptsView -.-> cinterodiaz.utils.Console
+    AttemptsView -.-> cinterodiaz.mastermind.models.Attempt
+    AttemptsView -.-> MessageView
+
+    class MessageView {
+        + writeln(message : Message) : void
+        + writeln(message : Message, attempts : int) : void
+        + writeln(message : Message, blacks : int, whites : int) : void
+    }
+
+    MessageView -.-> cinterodiaz.utils.Console
+    MessageView -.-> Message
+
+    class ProposedCombinationView {
+        + readProposedCombination() : ProposedCombination
+        - checkLetters(char, String) : boolean
+        - hasDuplicateCharacters(String) : boolean
+        - checkCombination(String) : Error
+    }
+
+    ProposedCombinationView -.-> cinterodiaz.mastermind.types.Error
+    ProposedCombinationView -.-> cinterodiaz.utils.Console
+    ProposedCombinationView -.-> cinterodiaz.mastermind.views.Message
+    ProposedCombination -.-> cinterodiaz.mastermind.models.ProposedCombination
+
+    
+    
+}
+
+' -----------------------------
+' PAQUETE: views
+' -----------------------------
+
+package cinterodiaz.mastermind.views {
+
+    abstract class View {
+        + View(board : Board)
+        + abstract start() : void
+        + abstract play() : void
+        + abstract resume() : boolean
+    }
+
+    View -up-|> WithBoardView
+
+    abstract class WithBoardView {
+        # board : Board
+        --
+        + WithBoardView(board : Board)
+    }
+
+    WithBoardView --> cinterodiaz.mastermind.models.Board
+
+    enum Message {
+        TITLE
+        SECRET_COMBINATION
+        ATTEMPTS
+        RESULT
+        PROPOSED_COMBINATION
+        WINNER
+        LOOSER
+        RESUME
+    }
+}
+
+
+@enduml

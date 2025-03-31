@@ -1,6 +1,8 @@
-package cinterodiaz.mastermind.views;
+package cinterodiaz.mastermind.views.console;
 
 import cinterodiaz.mastermind.models.Board;
+import cinterodiaz.mastermind.views.Message;
+import cinterodiaz.mastermind.views.WithBoardView;
 import cinterodiaz.utils.YesNoDialog;
 
 public class ResumeView extends WithBoardView {

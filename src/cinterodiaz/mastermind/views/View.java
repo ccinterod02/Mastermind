@@ -2,29 +2,16 @@ package cinterodiaz.mastermind.views;
 
 import cinterodiaz.mastermind.models.Board;
 
-public class View extends WithBoardView {
-
-    private StartView startView;
-    private PlayView playView;
-    private ResumeView resumeView;
+public abstract class View extends WithBoardView {
 
     public View(Board board) {
         super(board);
-        this.startView = new StartView(this.board);
-        this.playView = new PlayView(this.board);
-        this.resumeView = new ResumeView(this.board);
     }
 
-    public void start() {
-        this.startView.interact();
-    }
+    public abstract void start();
 
-    public void play() {
-        this.playView.interact();
-    }
+    public abstract void play();
 
-    public boolean resume() {
-        return this.resumeView.interact();
-    }
+    public abstract boolean resume();
 
 }

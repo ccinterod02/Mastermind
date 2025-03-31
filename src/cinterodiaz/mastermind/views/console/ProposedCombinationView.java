@@ -1,11 +1,11 @@
-package cinterodiaz.mastermind.views;
+package cinterodiaz.mastermind.views.console;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import cinterodiaz.mastermind.models.Board;
 import cinterodiaz.mastermind.models.ProposedCombination;
 import cinterodiaz.mastermind.types.Error;
+import cinterodiaz.mastermind.views.Message;
 import cinterodiaz.utils.Console;
 
 public class ProposedCombinationView {
